@@ -1,16 +1,26 @@
-import React from 'react'
-import { useState } from 'react'
-import './App.css'  
-import ImgTourDeFrance from './components/ImgTourDeFrance.jsx';
-import Description from './components/desc.jsx';
-import Prix from './components/prix.jsx';
-import Newsletter from './components/newsletter.jsx';
+import clsx from 'clsx';
+import Badge from '../components/Badge.jsx';
+import Button from '../components/button.jsx';
+import Input from '../components/Input.jsx';
+import Label from '../components/label.jsx';
+import Card, { CardHeader, CardBody } from '../components/Card.jsx';
+import { Link} from 'react-router-dom';
+import Bondecommande from '../components/Bondecommande.jsx';
+import TtlesArticles from '../components/ttlesarticles.jsx';
+import Newsletter from '../components/newsletter.jsx';
+import Description from '../components/desc.jsx';
+import ImgTourDeFrance from '../components/ImgTourDeFrance.jsx';
+import Prix from '../components/prix.jsx';
+
+import React, { useState } from 'react';
+
+
 
 
 
 
 function Header() {
-  return <header><h1>site de vente de photos du TDF</h1>
+  return <header>
  
 <nav class="flex px-5 py-3" aria-label="Breadcrumb">
   <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
@@ -27,7 +37,7 @@ function Header() {
         <svg class="rtl:rotate-180 block w-3 h-3 mx-1 text-gray-400 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
           <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
         </svg>
-        <a href="#" class="ms-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ms-2 dark:text-gray-400 dark:hover:text-white">Photos</a>
+        <a href="/categorie" class="ms-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ms-2 dark:text-gray-400 dark:hover:text-white">Categories</a>
       </div>
     </li>
     <li aria-current="page">
@@ -42,27 +52,23 @@ function Header() {
 </nav></header>;
 }
 
-function Footer() {
-  return <footer className='text-red-400'><p>© 2025</p> <p>Site développé en React & Tailwind</p></footer>;
-}
 
-function App() {
+function produit() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-    <div>
+    <div className='min-h-screen bg-yellow-200 p-8'>
       <Header />
       <main><Description />  <ImgTourDeFrance /> <Prix /> </main>
      
 
 
       <Newsletter />
-       
-      <Footer />
+      
     </div>    
     </>
   )
 }
 
-export default App
+export default produit;

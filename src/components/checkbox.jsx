@@ -1,76 +1,99 @@
 import { useState } from 'react';
-    import React from 'react';
+import React from 'react';
+import Badge from './Badge.jsx';
+import clsx from 'clsx';
+import Button from './button.jsx';
 
 function ColorCheckboxes() {
-   const [selectedColor, setSelectedColor] = useState('');
+  const [selectedColor, setSelectedColor] = useState('');
   
-  const prices = {
-    jaune: 120,
-    rose: 87,
-    rouge: 99
+  const editions = {
+    rouge: {
+      name: 'Edition Vuelta',
+      price: 99,
+      color: 'bg-red-500',
+      stock: 'success',
+      stockLabel: 'En stock',
+      variantcolor:"text-green-800",
+      variantsavoirplus: 'outline',
+      link: '/editionvuelta'
+    },
+    rose: {
+      name: 'Edition Giro',
+      price: 87,
+      color: 'bg-pink-500',
+      stock: 'warning',
+      stockLabel: 'Stock limité',
+      variantcolor:"text-yellow-800",
+      variantsavoirplus: 'limitede',
+      link: '/editiongiro'
+    },
+    jaune: {
+      name: 'Edition TDF',
+      price: 120,
+      color: 'bg-yellow-400',
+      stock: 'danger',
+      stockLabel: 'Rupture',
+      variantcolor:"text-red-800",
+      variantsavoirplus: 'lose',
+      link: '/produit'
+    }
   };
 
   return (
     <div className="p-8 max-w-md mx-auto">
-      <h2 className="text-2xl font-bold mb-6">Choisissez l'édition</h2>
+      
        
+      {selectedColor && (
+        <>
+        <div className="text-center mb-6">
+          <span className={`text-2xl font-bold ${editions[selectedColor].variantcolor}`}>
+            {editions[selectedColor].price}€
+          </span>
+        </div>
         {selectedColor && (
-          <div className="text-center mb-6">
-            <span className="text-2xl font-bold text-green-600">
-              {prices[selectedColor]}€
-            </span>
-          </div>
-        )}
+        <div className="flex justify-center mb-6 space-x-4">
+           <a className="no-underline" href={editions[selectedColor].link}>
+          <Button variant={editions[selectedColor].variantsavoirplus}>
+          
+            En savoir plus
+          
+          </Button>
+          </a>
+        </div>
+      )}
+
         
+        </>
+
+      )}
       
       <div className="space-y-4">
-        {}
-        <label className="flex items-center space-x-3 cursor-pointer">
-          <div 
-            onClick={() => setSelectedColor(selectedColor === 'rouge' ? '' : 'rouge')}
-            className={`w-10 h-10 rounded-full bg-red-500 flex items-center justify-center`}
-          >
-            {selectedColor === 'rouge' && (
-              <svg className="w-5 h-6 text-white" fill="none" stroke="white">
-                <path  strokeWidth="3" d="M5 13l4 4L19 7" />
-              </svg>
+        {Object.entries(editions).map(([key, edition]) => (
+          <label key={key} className="flex items-center space-x-3 cursor-pointer p-3 rounded-lg hover:bg-gray-50 transition-colors">
+            <div 
+              onClick={() => setSelectedColor(selectedColor === key ? '' : key)}
+              className={`w-10 h-10 rounded-full ${edition.color} flex items-center justify-center flex-shrink-0`}
+            >
+              {selectedColor === key && (
+                <svg className="w-5 h-6 text-white" fill="none" stroke="white">
+                  <path strokeWidth="3" d="M5 13l4 4L19 7" />
+                </svg>
+              )}
+            </div>
+            <div className="flex-1">
+              <span className="text-lg font-medium">{edition.name}</span>
+            </div>
+            {selectedColor === key && (
+              <>
+              <Badge variant={edition.stock}>{edition.stockLabel}</Badge>
+              
+              </>
             )}
-          </div>
-          <span className="text-lg">Edition Vuelta</span>
-        </label>
-
-        {}
-        <label className="flex items-center space-x-3 cursor-pointer">
-          <div 
-            onClick={() => setSelectedColor(selectedColor === 'rose' ? '' : 'rose')}
-            className={`w-10 h-10 rounded-full bg-pink-500 flex items-center justify-center `}
-          >
-            {selectedColor === 'rose' && (
-              <svg className="w-4 h-6 text-white" fill="none" stroke="white">
-                <path  strokeWidth="3" d="M5 13l4 4L19 7" />
-              </svg>
-            )}
-          </div>
-          <span className="text-lg">Edition Giro</span>
-        </label>
-
-        {}
-        <label className="flex items-center space-x-3 cursor-pointer">
-          <div 
-            onClick={() => setSelectedColor(selectedColor === 'jaune' ? '' : 'jaune')}
-            className={`w-10 h-10 rounded-full bg-yellow-400 flex items-center justify-center `}
-          >
-            {selectedColor === 'jaune' && (
-              <svg className="w-5 h-6 text-white" fill="none" stroke="white">
-                <path  strokeWidth="3" d="M5 13l4 4L19 7" />
-              </svg>
-            )}
-          </div>
-          <span className="text-lg">Edition TDF</span>
-        </label>
+            
+          </label>
+        ))}
       </div>
-
-    
     </div>
   );
 }
