@@ -11,6 +11,7 @@ import Categorie from './pages/categorie.jsx'
 import Produit from './pages/produit.jsx'
 import Layout from './components/Layout.jsx'
 import Home from './pages/home.jsx'
+import Notfound from './pages/404.jsx'
 
 import './index.css'
 
@@ -24,7 +25,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path="/editiongiro" element={<Editiongiro />} />
           <Route path="/editiontdf" element={<Editiontdf />} />
           <Route path="/editionvuelta" element={<Editionvuelta />} />
-          <Route path="*" element={<h1>404 Not Found</h1>} />
+          <Route path="*" element={<Notfound/>} />
           <Route path="/achateffectue" element={<Achateffectue/>} />
           <Route path="/categorie" element={<Categorie/>} />
           <Route path="/produit" element={<Produit/>} />
