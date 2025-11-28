@@ -118,7 +118,7 @@ function Header() {
     <main>
     <div className="min-h-screen bg-yellow-200 p-8">
       <div className="max-w-7xl mx-auto">
-        {/* Header */}
+
         <div className="mb-8">
           <h1 className="text-3xl font-bold text-gray-900 mb-2">Catalogue produits</h1>
           <div className="flex justify-between items-center">
@@ -129,11 +129,9 @@ function Header() {
           </div>
         </div>
 
-        {/* Filters and Sort */}
-        <div className="bg-white rounded-2xl shadow-sm p-6 mb-8">
+        <div className="bg-headers rounded-2xl shadow-sm p-6 mb-8">
           <div className="flex justify-between items-center flex-wrap gap-4">
-            {/* Category Filters */}
-            <div className="flex gap-2">
+            <div className="flex gap-2 wrap">
               {categories.map((category) => (
                  <Button
                   key={category}
@@ -144,7 +142,7 @@ function Header() {
                 </Button>
               ))}
             </div>
-<div className="flex items-center gap-2">
+            <div className="flex items-center gap-2">
               <span className="text-gray-700 text-sm">Trier par :</span>
               <select
                 value={sortBy}
@@ -167,7 +165,6 @@ function Header() {
               key={product.id}
               className="bg-white rounded-2xl shadow-sm overflow-hidden hover:shadow-lg transition-shadow"
             >
-              {/* Product Image */}
               <div className="relative">
                 <img
                   src={product.image}
@@ -178,12 +175,10 @@ function Header() {
                 
               </div>
 
-              {/* Product Info */}
               <div className="p-6">
                 <h3 className="text-lg font-bold text-gray-900 mb-2">{product.name}</h3>
                 <p className="text-sm text-gray-600 mb-4">{product.description}</p>
 
-                {/* Price and Rating */}
                 <div className="flex items-center justify-between mb-4">
                   <span className="text-2xl font-bold text-gray-900">${product.price}</span>
                   <div className="flex items-center gap-2">
@@ -195,7 +190,6 @@ function Header() {
                 </div>
 
                
-                {/* Add to Cart Button - Utilisation du composant Button */}
                 <a href="/produit">
                 <Button variant="bondecommande" className="w-full py-3">
                   Voir la fiche produit

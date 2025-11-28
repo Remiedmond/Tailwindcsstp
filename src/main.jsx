@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { createContext } from 'react'
 import ReactDOM from 'react-dom/client'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import App from './App.jsx'         
@@ -10,6 +10,7 @@ import Achateffectue from './pages/achateffectue.jsx'
 import Categorie from './pages/categorie.jsx'
 import Produit from './pages/produit.jsx'
 import Layout from './components/Layout.jsx'
+import Home from './pages/home.jsx'
 
 import './index.css'
 
@@ -18,7 +19,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <BrowserRouter>
       <Routes>
         <Route element={<Layout />} >
-          <Route path="/" element={<App />} />
+          <Route path="/" element={<Home />} />
           <Route path="/styleguide" element={<Styleguide />} />
           <Route path="/editiongiro" element={<Editiongiro />} />
           <Route path="/editiontdf" element={<Editiontdf />} />

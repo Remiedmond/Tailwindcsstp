@@ -17,6 +17,10 @@ border-border, ring-ring, bg-primary, text-primary-foreground, etc.)
 --color-secondary-foreground: var(--secondary-foreground);
 --color-muted: var(--muted);
 --color-muted-foreground: var(--muted-foreground);
+--color-headers: var(--color-headers);
+--color-headers-foreground: var(--color-headers-foreground);
+--color-headerss: var(--color-headerss);
+--color-headerss-foreground: var(--color-headerss-foreground);
 }
 /* Tailwind */
 @tailwind base;
@@ -26,11 +30,15 @@ border-border, ring-ring, bg-primary, text-primary-foreground, etc.)
 1. TOKENS GLOBAUX
 ========================= */:root {
   /*  Palette principale (HEX) */
-  --color-primary: #3b5bfd;
+  --color-primary: var(--color-yellow-200, #facc15);
   --color-primary-foreground: #ffffff;
   --color-secondary: #7a3cff;
   --color-muted: #f1f5f9;
   --color-muted-foreground: #4b5563;
+  --color-headers: #d9dee5;
+  --color-headers-foreground: #1e293b;
+  --color-headerss: #e31c1c;
+  --color-headerss-foreground: #d94444;
   
   /*  Sémantique */
   --color-success: #16a34a;
@@ -73,6 +81,10 @@ border-border, ring-ring, bg-primary, text-primary-foreground, etc.)
 --primary-foreground: var(--color-primary-foreground);
 --secondary: var(--color-secondary);
 --secondary-foreground: #ffffff;
+--headers: var(--color-headers);
+--headers-foreground: var(--color-headers-foreground);
+--headerss: var(--color-headerss);
+--headerss-foreground: var(--color-headerss-foreground);
 --muted: var(--color-muted);
 --muted-foreground: var(--color-muted-foreground);
 --border: var(--color-border);

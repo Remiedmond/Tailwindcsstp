@@ -24,6 +24,15 @@ secondary: {
 DEFAULT: "hsl(var(--secondary))",
 foreground: "hsl(var(--secondary-foreground))",
 },
+headers: {
+DEFAULT: "hsl(var(--headers))",
+foreground: "hsl(var(--headers-foreground))",
+},
+
+headerss: {
+DEFAULT: "hsl(var(--headerss))",
+foreground: "hsl(var(--headerss-foreground))",
+},
 muted: {
 DEFAULT: "hsl(var(--muted))",
 foreground: "hsl(var(--muted-foreground))",

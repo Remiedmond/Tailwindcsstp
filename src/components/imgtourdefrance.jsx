@@ -3,26 +3,43 @@
     function ImgTourDeFrance() {
     return (
         <div>
-        <div className="grid grid-cols-3 gap-4 mb-8">
-            <div className="bg-yellow-500 text-white p-8 rounded -rotate-2 mx-auto   m-4"> <p className='rotate-3'>Photos Tour de France</p> <img 
-                src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Tour_de_France_logo.svg/1024px-Tour_de_France_logo.svg.png"
-                alt="Image 1" 
-                className="w-90 h-70 object-cover mx-auto hover:scale-110 transition-transform duration-300 cursor-pointer"
-            /> 
-            </div>
-             <div className="bg-red-500 text-white p-8 rounded  mx-auto   m-4"> <p className=''>Photos Vuelta de España</p> <img 
-                src="https://play-lh.googleusercontent.com/QDzGJRu70cU1Rhyav4v7BhBNmJBlPL2mWrjRqnHTN0ZPxqKeUjXaNFEBX3kcay6dLtRKJXdQUD4IbN4tLvmyPg=w600-h300-pc0xffffff-pd"
-                alt="Image 1" 
-                className="w-100 h-70 object-covermx-auto hover:scale-110 transition-transform duration-300 cursor-pointer"
-            /> 
-            </div>
-             <div className="bg-rose-500 text-white p-8 rounded rotate-2 mx-auto   m-4"> <p className='-rotate-3'>Photos Giro de Italia</p> <img 
-                src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Giro_d%27Italia_-_Logo_2018.svg/2560px-Giro_d%27Italia_-_Logo_2018.svg.png"
-                alt="Image 1" 
-                className="w-90 h-70 object-cover mx-auto hover:scale-110 transition-transform duration-300 cursor-pointer"
-            /> 
-            </div>
+        <div className="max-w-7xl mx-auto px-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8 mt-8">
+        <div className="bg-yellow-500 text-white p-6 md:p-8 rounded-xl -rotate-2 hover:rotate-0 transition-all duration-300 shadow-lg mx-auto w-full max-w-sm cursor-pointer group">
+          <p className="rotate-2 text-xl font-bold text-center mb-4 group-hover:rotate-0 transition-transform">
+            Photos Tour de France
+          </p>
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Tour_de_France_logo.svg/1024px-Tour_de_France_logo.svg.png"
+            alt="Tour de France"
+            className="w-full h-48 object-contain mx-auto group-hover:scale-110 transition-transform duration-300"
+          />
         </div>
+        <div className="bg-red-600 text-white p-6 md:p-8 rounded-xl  hover:rotate-0 transition-all duration-300 shadow-lg mx-auto w-full max-w-sm cursor-pointer group">
+          <p className="text-xl font-bold text-center mb-4">
+            Photos Vuelta de España
+          </p>
+          <img
+          
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/La_Vuelta_Logo.svg/1200px-La_Vuelta_Logo.svg.png"
+            alt="Vuelta"
+            className="w-full h-48 object-contain mx-auto group-hover:scale-110 transition-transform duration-300"
+          />
+        </div>
+
+        <div className="bg-rose-500 text-white p-6 md:p-8 rounded-xl rotate-2 hover:rotate-0 transition-all duration-300 shadow-lg mx-auto w-full max-w-sm cursor-pointer group">
+          <p className="-rotate-2 text-xl font-bold text-center mb-4 group-hover:rotate-0 transition-transform">
+            Photos Giro de Italia
+          </p>
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Giro_d%27Italia_-_Logo_2018.svg/2560px-Giro_d%27Italia_-_Logo_2018.svg.png"
+            alt="Giro"
+            className="w-full h-48 object-contain mx-auto group-hover:scale-110 transition-transform duration-300"
+          />
+        </div>
+
+      </div>
+    </div>
 
         <div className="grid grid-cols-3 grid-rows-3 gap-4 max-w-[1200px] mx-auto">
             <div className="row-start-1 row-span-2 bg-white rounded-lg overflow-hidden shadow-lg">
